@@ -1,0 +1,84 @@
+<html>
+<head>
+	<title>Lost Password</title>
+	<link rel="stylesheet" type="text/css" href="lost1.css">
+<script>
+function validate()
+{ 
+   if( document.Lost.regno.value == "" )
+   {
+     alert( "Please provide your Registration No !" );
+     document.Lost.regno.focus() ;
+     return false;
+   }
+   
+   if( document.Lost.dob.value == "" )
+   {
+     alert( "Please provide your D.O.B !" );
+     document.Lost.dob.focus() ;
+     return false;
+   }
+
+var emailid = document.Lost.emailid.value;
+  atpos = emailid.indexOf("@");
+  dotpos = emailid.lastIndexOf(".");
+ if (emailid == "" || atpos < 1 || ( dotpos - atpos < 2 )) 
+ {
+     alert("Please enter correct email ID")
+     document.Lost.emailid.focus() ;
+     return false;
+ }
+   if(document.Lost.sq.value == -1)
+   {
+	alert("Please chose your Security Question");
+	document.Lost.sq.focus() ;
+     return false;
+   }
+   if(document.Lost.sa.value == "")
+   {
+	alert("Please Provide Your Security Answer");
+	document.Lost.sa.focus() ;
+     return false;
+   }
+	
+ return( true );
+}
+
+</script>
+</head>
+	<body>
+		<h1>Varify Details</h1>
+		<div class="lost">
+		<img src="avatar2.jpg" class="avatar">
+		<h2>Enter Details</h2>
+	<form method="post" name="Lost" onSubmit="return(validate())">
+
+	<label>Registration No :</label><br>
+		<input type="text" name="regno" id="name"
+		placeholder="1728110043"><br><br>
+	
+	<label>D.O.B :</label>
+		<input type="text" name="dob" id="name"
+		placeholder="DD/MM/YYYY"><br><br>
+	
+	<label>E-mail ID :</label>
+		<input type="email" name="emailid" id="name"
+		placeholder="Enter your e-mail"><br><br>
+	<label>Security Question :<br>
+  <select id="name" name="sq">
+<option value="-1" selected>Select....</option>
+<option >Your Fevarte Book?</option>
+<option >Your Hobby?</option>
+<option >Father Name?</option>
+<option >Mother Name?</option>
+<option value="asp.net">Name Of School?</option>
+ </select></label><br><br>
+
+	<label>Security Answer :</label>
+		<input type="text" name="sa" id="name"
+		placeholder="Enter Your Security Answer"><br><br> 
+
+	<input type="submit" name="submit"  value="VERIFY"><br><br>
+</form> </div>
+</body>
+</html>

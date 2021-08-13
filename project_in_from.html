@@ -1,0 +1,97 @@
+
+<html>
+<head>
+	<title>Project input from</title>
+	<link rel="stylesheet" type="text/css" href="project_in_from.css">
+<script>
+
+function validate()
+{ 
+   if( document.Project.sname.value == "" )
+   {
+     alert( "Please provide Student Name !" );
+     document.Project.sname.focus() ;
+     return false;
+   }
+   
+   if( document.Project.pname.value == "" )
+   {
+     alert( "Please provide Project Name !" );
+     document.Project.pname.focus() ;
+     return false;
+   }
+   
+   if( document.Project.ptype.value == "-1" )
+   {
+     alert( "Please provide Project Type !" );
+     document.Project.ptype.focus() ;
+     return false;
+   }
+
+   if( document.Project.year.value == "-1" )
+   {
+     alert( "Please provide Year !" );
+     document.Project.year.focus() ;
+     return false;
+   }
+
+   if( document.Project.pic.value == "" )
+   {
+     alert( "Please provide Project File !" );
+     document.Project.pic.focus() ;
+     return false;
+   }
+
+return( true );
+}
+
+</script>
+
+</head>
+<body>
+	<h1>Project Details</h1>
+	<div class="project">
+	<img src="pencil.jpg" class="avatar">
+	<h2>Submit Here</h2>
+	<form method="POST" name="Project" id="project" onSubmit="return(validate()) enctype="multipart/form-data">
+
+	<label>Name :</label><br>
+		<input type="text" name="sname" id="name"
+		placeholder="Enter student name"><br><br>
+
+	<label>Project Name :</label><br>
+			<input type="text" name="pname" id="name"
+			placeholder="Enter your prooject name"><br><br>
+		
+		<label>Project Type :<br>
+  <select id="ptype" name="ptype">
+<option value="-1" selected>Select....</option>
+<option value="html">HTML</option>
+<option value="c">C</option>
+<option value="c++">C++</option>
+<option value="c#">C#</option>
+<option value="asp.net">ASP.NET</option>
+<option value="java">JAVA</option>
+<option value="python">PYTHON</option>
+ </select></label> <br><br>
+		
+		<label>Year :<br>
+  <select id="year" name="year">
+<option value="-1" selected>Select...</option>
+<option value="2014">2014</option>
+<option value="2015">2015</option>
+<option value="2016">2016</option>
+<option value="2017">2017</option>
+<option value="2018">2018</option>
+<option value="2019">2019</option>
+<option value="2020">2020</option>
+</select></label><br>  
+
+		<font color="#ffc105">			
+		<p>( include / attach your project files below )</p>
+		<input type="file" name="file" id="file" >
+		</font><br><br>
+		<input type="submit" id="sub" name="submit" value="SUBMIT" ><br>
+		</form></div>
+	</body>
+</html>
